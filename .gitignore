@@ -1,0 +1,10 @@
+# Ignore dependencies
+node_modules
+frontend/node_modules
+
+# Ignore build output
+dist
+frontend/dist
+
+# Ignore Vercel temp files
+.vercel
