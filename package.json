@@ -2,10 +2,7 @@
   "name": "nifty-root",
   "private": true,
   "scripts": {
-    "build:frontend": "cd frontend && npm install && npm run build",
-    "copy:dist:unix": "rm -rf dist && cp -r frontend/dist dist",
-    "copy:dist:win": "rmdir /s /q dist 2>nul || true & xcopy frontend\\\\dist dist /E /I /Y",
-    "postbuild": "node -e \"const os=require('os'); const {execSync}=require('child_process'); if(os.platform()==='win32'){ execSync('npm run copy:dist:win',{stdio:'inherit'});}else{ execSync('npm run copy:dist:unix',{stdio:'inherit'});} \"",
-    "build": "npm run build:frontend && npm run postbuild"
+    "build": "cd frontend && npm install && npm run build",
+    "postbuild": "cp -r frontend/dist dist"
   }
 }
